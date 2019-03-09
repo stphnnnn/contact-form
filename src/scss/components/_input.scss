@@ -1,0 +1,45 @@
+.c-input {
+  &__checkbox {
+    label {
+      display: flex;
+      font-size: 16px;
+      user-select: none;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &::after {
+        content: '✔';
+        border: 1px solid #ccc;
+        border-radius: $borderRadius;
+        width: 2em;
+        height: 2em;
+        color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s ease;
+      }
+
+      &:hover {
+        &::after {
+          background: $colorsLightGrey;
+        }
+      }
+    }
+    input[type='checkbox'] {
+      display: none;
+
+      &:checked + label::after {
+        background-color: $colorsMidGreen;
+        border-color: $colorsDarkGreen;
+        color: $colorsLight;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 0.5em;
+  }
+}

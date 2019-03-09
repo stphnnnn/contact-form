@@ -1,0 +1,27 @@
+.c-button {
+  height: 50px;
+  border-radius: $borderRadius;
+  font-family: inherit;
+  font-size: 14px;
+  border: 0;
+  background: $colorsMidGreen;
+  color: $colorsLight;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  user-select: none;
+  padding: 0 20px;
+  transition: background 0.2s ease-in-out;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: $colorsDarkGreen;
+  }
+
+  &:disabled {
+    background: $colorsGrey;
+  }
+}

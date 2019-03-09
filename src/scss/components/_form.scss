@@ -1,0 +1,107 @@
+.c-form {
+  position: relative;
+
+  &__success {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: $colorsLight;
+    transition: opacity 0.2s ease-in-out;
+    .is-form-submitted & {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.2s ease-in-out;
+    .is-form-submitted & {
+      opacity: 0;
+    }
+  }
+
+  &__input-group {
+    margin-bottom: 20px;
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    textarea {
+      padding: 0.5em 0.5em;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: $borderRadius;
+      vertical-align: middle;
+      box-sizing: border-box;
+      width: 100%;
+      height: 50px;
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+
+    input[required],
+    textarea[required] {
+      &:valid {
+        border: 1px solid $colorsDarkGreen;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+  }
+
+  .c-button[type='submit'] {
+    position: relative;
+
+    // Loading spinner
+    &::before {
+      content: '';
+      background: inherit;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: inherit;
+      position: absolute;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      border: solid 2px;
+      border-color: #fff transparent transparent transparent;
+      border-radius: 100%;
+      animation: spin 1s infinite;
+      transform-origin: 0 0;
+    }
+
+    &::before,
+    &::after {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .is-form-submitting & {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

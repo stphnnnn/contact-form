@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Get in touch</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scss/main.scss" />
+  </head>
+  <body>
+    <main class="c-page">
+      <h1>Get in touch</h1>
+      <div class="c-form" id="contact-form">
+        <form class="c-form__form">
+          <div class="c-form__input-group">
+            <label class="c-input__label">Name <small>(required)</small></label>
+            <input type="text" spellcheck="false" required />
+          </div>
+          <div class="c-form__input-group">
+            <label class="c-input__label"
+              >Email <small>(required)</small></label
+            >
+            <input type="email" spellcheck="false" required />
+          </div>
+          <div class="c-form__input-group">
+            <label class="c-input__label">Phone number</label>
+            <input type="tel" spellcheck="false" />
+          </div>
+          <div class="c-form__input-group">
+            <label class="c-input__label">
+              Enquiry <small>(required)</small>
+            </label>
+            <textarea required></textarea>
+          </div>
+          <div class="c-form__input-group">
+            <div class="c-input__checkbox">
+              <input id="newsletter" type="checkbox" />
+              <label for="newsletter">Sign up to newsletter</label>
+            </div>
+          </div>
+          <div class="c-form__input-group">
+            <div class="c-input__checkbox">
+              <input id="privacy" type="checkbox" checked />
+              <label for="privacy">
+                <span>Agree to <a href="">privacy policy</a></span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="c-button">Send enquiry</button>
+        </form>
+        <div class="c-form__success">
+          <h2>Thank you! <br />Your message has been sent</h2>
+          <button class="c-button" id="success-go-back">← Go back</button>
+        </div>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
