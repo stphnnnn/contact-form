@@ -14,5 +14,5 @@ Then visit http://localhost:1234 in your browser
 ## Build for deployment
 
 ```sh
-$ npm build
+$ npm run build
 ```
